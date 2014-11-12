@@ -104,7 +104,7 @@ Type must be one of the following:
 * `UX`: Research and design principles. These are typically documentation commits.
 * `ICON`: Implementation of Clarity's Custom Element icons.
 * `UI`: Implementation of Clarity's static styles, its general look-and-feel.
-* `NG`: Implementation of Clarity's Angular 2 components.
+* `NG`: Implementation of Clarity's Angular components.
 * `CORE`: Website, distribution, build script and tooling.
 
 #### Writing Guidelines
@@ -120,8 +120,8 @@ You can submit an issue or a bug to our [GitHub repository](https://github.com/v
 
 * The link to the reproduction scenario you created using one of the Clarity Plunker Templates
 * If possible please provide a minimal demo illustrating the issue by forking one of the Clarity Plunker Templates
-  - Clarity Version: [Latest](https://plnkr.co/8TwwdL)
-  - Clarity Version: [0.7.6](https://plnkr.co/iWrQNL)
+  - Clarity Version: [Latest - 0.9.x](https://plnkr.co/uNwwZe)
+  - Clarity Version: [Legacy - 0.8.15](https://plnkr.co/8TwwdL)
 * The version number of Angular
 * The version number of Clarity
 * The browser name and version number

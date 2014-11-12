@@ -3,22 +3,27 @@
  * This software is released under MIT license.
  * The full license information can be found in LICENSE in the root directory of this project.
  */
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
+import { NgModule } from "@angular/core";
 
 import { ROUTING } from "./app.routing";
 
 import { AppComponent } from "./app.component";
 import { LandingComponent } from "./landing.component";
-import { ClarityModule } from "../clarity-angular";
+import { ClarityModule } from "../clarity-angular/clarity.module";
+
+
+
 
 @NgModule({
     imports: [
-        BrowserModule,
+        BrowserAnimationsModule,
+        CommonModule,
         FormsModule,
-        ROUTING,
-        ClarityModule.forRoot()
+        ClarityModule,
+        ROUTING
     ],
     declarations: [
         AppComponent,

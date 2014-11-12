@@ -5,7 +5,7 @@
  */
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {ClarityModule} from "../../clarity-angular";
+import {ClarityModule} from "../../clarity-angular/clarity.module";
 import {ROUTING} from "./tooltips.demo.routing";
 import {TooltipsDemo} from "./tooltips.demo";
 import {TooltipsSizesDemo} from "./tooltips-sizes";
@@ -13,6 +13,7 @@ import {TooltipsDirectionsDemo} from "./tooltips-directions";
 import {TooltipsIconDemo} from "./tooltips-icons";
 import {TooltipsTextDemo} from "./tooltips-text";
 import {TooltipsButtonsDemo} from "./tooltips-buttons";
+import {TooltipsAngularDemo} from "./tooltips-angular";
 
 @NgModule({
     imports: [
@@ -24,6 +25,7 @@ import {TooltipsButtonsDemo} from "./tooltips-buttons";
         TooltipsDemo,
         TooltipsSizesDemo,
         TooltipsDirectionsDemo,
+        TooltipsAngularDemo,
         TooltipsIconDemo,
         TooltipsTextDemo,
         TooltipsButtonsDemo
@@ -32,6 +34,7 @@ import {TooltipsButtonsDemo} from "./tooltips-buttons";
         TooltipsDemo,
         TooltipsSizesDemo,
         TooltipsDirectionsDemo,
+        TooltipsAngularDemo,
         TooltipsIconDemo,
         TooltipsTextDemo,
         TooltipsButtonsDemo

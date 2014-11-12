@@ -5,9 +5,8 @@
  */
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {ClarityModule} from "../../clarity-angular";
+import {ClarityModule} from "../../clarity-angular/clarity.module";
 import {ROUTING} from "./modal.demo.routing";
-
 import {ModalDemo} from "./modal.demo";
 import {ModalStaticDemo} from "./modal-static";
 import {ModalStaticOldDemo} from "./modal-static-old";
@@ -18,7 +17,7 @@ import {ModalAngularStaticBackdropDemo} from "./modal-angular-static-backdrop";
 import {ModalAnimationDemo} from "./modal-animation";
 import {ModalBackdropDemo} from "./modal-backdrop";
 import {ModalSizesDemo} from "./modal-sizes";
-
+import {ModalMaxHeightDemo} from "./modal-max-height";
 
 @NgModule({
     imports: [
@@ -36,7 +35,8 @@ import {ModalSizesDemo} from "./modal-sizes";
         ModalAngularStaticBackdropDemo,
         ModalAnimationDemo,
         ModalBackdropDemo,
-        ModalSizesDemo
+        ModalSizesDemo,
+        ModalMaxHeightDemo
     ],
     exports: [
         ModalDemo,
@@ -48,7 +48,8 @@ import {ModalSizesDemo} from "./modal-sizes";
         ModalAngularStaticBackdropDemo,
         ModalAnimationDemo,
         ModalBackdropDemo,
-        ModalSizesDemo
+        ModalSizesDemo,
+        ModalMaxHeightDemo
     ]
 })
 export default class ModalDemoModule {

@@ -5,9 +5,8 @@
  */
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {ClarityModule} from "../../clarity-angular";
+import {ClarityModule} from "../../clarity-angular/clarity.module";
 import {ROUTING} from "./dropdown.demo.routing";
-
 import {DropdownDemo} from "./dropdown.demo";
 import {DropdownStaticDefaultDemo} from "./dropdown-static-default";
 import {DropdownStaticPositioningDemo} from "./dropdown-static-positioning";
@@ -16,6 +15,8 @@ import {DropdownStaticIconToggleDemo} from "./dropdown-static-icon-toggle";
 import {DropdownStaticButtonLinkToggleDemo} from "./dropdown-static-buttonlink-toggle";
 import {DropdownAngularPositioningDemo} from "./dropdown-angular-positioning";
 import {DropdownAngularCloseItemFalseDemo} from "./dropdown-angular-close-item-false";
+import {DropdownHeaderDemo} from "./dropdown-header";
+import {DropdownAngularNestedDemo} from "./dropdown-angular-nested";
 
 @NgModule({
     imports: [
@@ -31,7 +32,9 @@ import {DropdownAngularCloseItemFalseDemo} from "./dropdown-angular-close-item-f
         DropdownStaticIconToggleDemo,
         DropdownStaticButtonLinkToggleDemo,
         DropdownAngularPositioningDemo,
-        DropdownAngularCloseItemFalseDemo
+        DropdownAngularNestedDemo,
+        DropdownAngularCloseItemFalseDemo,
+        DropdownHeaderDemo
     ],
     exports: [
         DropdownDemo,
@@ -40,7 +43,9 @@ import {DropdownAngularCloseItemFalseDemo} from "./dropdown-angular-close-item-f
         DropdownStaticIconToggleDemo,
         DropdownStaticButtonLinkToggleDemo,
         DropdownAngularPositioningDemo,
-        DropdownAngularCloseItemFalseDemo
+        DropdownAngularNestedDemo,
+        DropdownAngularCloseItemFalseDemo,
+        DropdownHeaderDemo
     ]
 })
 export default class DropdownDemoModule {

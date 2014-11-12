@@ -5,7 +5,7 @@
  */
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ClarityModule } from "../../clarity-angular";
+import { ClarityModule } from "../../clarity-angular/clarity.module";
 import { ROUTING } from "./iconography.demo.routing";
 import { IconsDemo } from "./iconography.demo";
 import { IconSelectionDemo } from "./icon-selection";
@@ -14,6 +14,7 @@ import { IconSizeDemo } from "./icon-size";
 import { IconOrientationDemo } from "./icon-orientation";
 import { IconInverseColorDemo } from "./icon-inverse-color";
 import { IconVariantsDemo } from "./icon-variants";
+import {IconsViewBoxTestDemo} from "./icons-view-box-test.demo";
 
 @NgModule({
     imports: [
@@ -28,7 +29,8 @@ import { IconVariantsDemo } from "./icon-variants";
         IconSelectionDemo,
         IconSizeDemo,
         IconInverseColorDemo,
-        IconVariantsDemo
+        IconVariantsDemo,
+        IconsViewBoxTestDemo
     ],
     exports: [
         IconsDemo,

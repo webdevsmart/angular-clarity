@@ -1,4 +1,4 @@
-// Copyright (c) 2016 VMware, Inc. All Rights Reserved.
+// Copyright (c) 2016-2017 VMware, Inc. All Rights Reserved.
 // This software is released under MIT license.
 // The full license information can be found in LICENSE in the root directory of this project.
 
@@ -6,7 +6,7 @@
 
 .color-square {
     display: inline-block;
-    vertical-align: text-bottom;
+    vertical-align: bottom;
     height: 14px;
     width: 14px;
     border: 1px solid black;
@@ -29,7 +29,7 @@
 }
 
 .lorem-ipsum {
-    max-width: 300px;
+    width: 300px;
 }
 
 .username-list {
@@ -41,4 +41,8 @@
     .username:last-child::after {
         content: ".";
     }
+}
+
+#vertical-scrolling {
+    height: 500px;
 }

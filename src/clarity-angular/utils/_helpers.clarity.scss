@@ -1,19 +1,6 @@
-// Copyright (c) 2016 VMware, Inc. All Rights Reserved.
+// Copyright (c) 2016-2017 VMware, Inc. All Rights Reserved.
 // This software is released under MIT license.
 // The full license information can be found in LICENSE in the root directory of this project.
-
-//Because the "rem" unit does not work on pseudo-elements in IE,
-//we use a function to compute "rem" to "px" with Sass.
-
-$clr-baseline: 24px !default;
-
-@function rem($remSize) {
-    @return $remSize * $clr-font-size;
-};
-
-@function baselineRem($remSize) {
-    @return $remSize * $clr-baseline;
-}
 
 //Get a selector for all the input types specified
 @function inputs($types...) {
@@ -49,14 +36,14 @@ $opp-directions: (
     right: left
 );
 
-%clr-container {
+@mixin clr-container() {
     & > :first-child {
         margin-top: 0;
     }
     & > :last-child {
         margin-bottom: 0;
     }
-}
+ }
 
 @mixin fixForFirefox() {
     @-moz-document url-prefix() {

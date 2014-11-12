@@ -3,10 +3,11 @@
 // The full license information can be found in LICENSE in the root directory of this project.
 
 @import "../_utils/code";
-@import '../../clarity-angular/utils/variables.clarity';
-@import "../../clarity-angular/images/icons.clarity";
+@import "../../clarity-angular/image/icons.clarity";
 
 .clr-example{
+
+    position: relative;
 
     &.squeeze{
         padding: 24px;

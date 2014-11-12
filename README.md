@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/vmware/clarity.svg?branch=master)](https://travis-ci.org/vmware/clarity)
 
-Project Clarity is an open source design system that brings together UX guidelines, an HTML/CSS framework, and Angular 2 components. This repository includes everything you need to build, customize, test, and deploy Clarity.  For complete documentation, visit the [Clarity website](https://vmware.github.io/clarity/).
+Project Clarity is an open source design system that brings together UX guidelines, an HTML/CSS framework, and Angular components. This repository includes everything you need to build, customize, test, and deploy Clarity.  For complete documentation, visit the [Clarity website](https://vmware.github.io/clarity/).
 
 ## Getting Started
 
@@ -12,11 +12,11 @@ Clarity is published as three npm packages:
 
 * __clarity-icons.__ Contains the custom element icons.
 * __clarity-ui.__ Contains the static styles for building HTML components.
-* __clarity-angular.__ Contains the Angular 2 components. This package depends on clarity-ui for styles.
+* __clarity-angular.__ Contains the Angular components. This package depends on clarity-ui for styles.
 
-The easiest way to run a sample Angular 2 application with Clarity is to use the [Clarity Seed](https://github.com/vmware/clarity-seed). 
+The easiest way to run a sample Angular application with Clarity is to use the [Clarity Seed](https://github.com/vmware/clarity-seed). 
 
-If you already have an Angular 2 application, you can follow the installation steps below to include and use Clarity in your application.
+If you already have an Angular application, you can follow the installation steps below to include and use Clarity in your application.
 
 ### Installing Clarity Icons
 
@@ -27,20 +27,13 @@ If you already have an Angular 2 application, you can follow the installation st
 
 2. Install the polyfill for Custom Elements: 
     ```bash
-    npm install @webcomponents/custom-elements@1.0.0-alpha.3 --save
+    npm install @webcomponents/custom-elements@1.0.0 --save
     ```
 
-3. (Optional) If your application supports IE10, the polyfill will require the MutationObserver shim to work. If your 
-application doesn't support IE10, you can skip the following installation:
-    ```bash
-    npm install mutationobserver-shim@0.3.2 --save
-    ```
-
-4. Include the clarity-icons.min.css and clarity-icons.min.js in your HTML. As custom-elements.min.js is dependent on the Custom Elements polyfill, make sure to include it before clarity-icons.min.js. Also, if your app needs to support IE10, include the mutationobserver.min.js before the polyfill:
+3. Include the clarity-icons.min.css and clarity-icons.min.js in your HTML. As clarity-icons.min.js is dependent on the Custom Elements polyfill, make sure to include it before clarity-icons.min.js:
     ```html
     <link rel="stylesheet" href="path/to/node_modules/clarity-icons/clarity-icons.min.css">
 
-    <script src="path/to/node_modules/mutationobserver-shim/dist/mutationobserver.min.js"></script>
     <script src="path/to/node_modules/@webcomponents/custom-elements/custom-elements.min.js"></script>
     <script src="path/to/node_modules/clarity-icons/clarity-icons.min.js"></script>
     ```
@@ -55,7 +48,6 @@ application doesn't support IE10, you can skip the following installation:
     ],
     "scripts": [
         ...
-        "../node_modules/mutationobserver-shim/dist/mutationobserver.min.js",
         "../node_modules/@webcomponents/custom-elements/custom-elements.min.js",
         "../node_modules/clarity-icons/clarity-icons.min.js"
         ...
@@ -94,7 +86,7 @@ application doesn't support IE10, you can skip the following installation:
     npm install clarity-angular --save
     ```
 
-3. Import the ClarityModule into your Angular 2 application's module.  Your application's main module might look like this:
+3. Import the ClarityModule into your Angular application's module.  Your application's main module might look like this:
     ```typescript
     import { NgModule } from '@angular/core';
     import { BrowserModule } from '@angular/platform-browser';
@@ -113,9 +105,8 @@ application doesn't support IE10, you can skip the following installation:
     export class AppModule {    }
     ```
     
-    If your application uses [systemjs](https://github.com/systemjs/systemjs), add the clarity-angular configurations
-    as in the example below. If your application already has packages setting for `rxjs` but doesn't have the `main`
-    file, add it in.
+    If your application uses [systemjs](https://github.com/systemjs/systemjs), add the clarity-angular configuration
+    as in the example below.
     ```
     System.config({
     	...
@@ -123,10 +114,6 @@ application doesn't support IE10, you can skip the following installation:
     	   ...
     	   'clarity-angular': 'node_modules/clarity-angular/clarity-angular.umd.js',
     	},
-    	packages: {
-            ...
-            'rxjs' : { main: 'Rx.js', defaultExtension: 'js' },
-    	}
     	...
     });
     ```
@@ -147,6 +134,6 @@ The Clarity project team welcomes contributions from the community. For more det
 ## Feedback
 
 If you find a bug or want to request a new feature, please open a [GitHub issue](https://github.com/vmware/clarity/issues).
-If possible please provide a minimal demo illustrating the issue by forking one of the Clarity Plunker Templates 
-- Clarity Version: [Latest](https://plnkr.co/8TwwdL)
-- Clarity Version: [0.7.6](https://plnkr.co/iWrQNL)
+* Include a link to the reproduction scenario you created by forking one of the Clarity Plunker Templates:
+  - Clarity Version: [Latest - 0.9.x](https://plnkr.co/uNwwZe)
+  - Clarity Version: [Legacy - 0.8.15](https://plnkr.co/8TwwdL)

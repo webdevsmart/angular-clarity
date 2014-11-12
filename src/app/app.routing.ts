@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 VMware, Inc. All Rights Reserved.
+ * Copyright (c) 2016-2017 VMware, Inc. All Rights Reserved.
  * This software is released under MIT license.
  * The full license information can be found in LICENSE in the root directory of this project.
  */
@@ -11,6 +11,7 @@ export const APP_ROUTES: Routes  = [
     { path: "", component: LandingComponent },
     { path: "alert", loadChildren: "app/alert/alert.demo.module" },
     { path: "badges", loadChildren: "app/badges/badges.demo.module" },
+    { path: "button-group", loadChildren: "app/button-group/button-group.demo.module" },
     { path: "buttons", loadChildren: "app/buttons/buttons.demo.module" },
     { path: "card", loadChildren: "app/card/card.demo.module" },
     { path: "checkboxes", loadChildren: "app/checkboxes/checkboxes.demo.module" },
@@ -32,6 +33,7 @@ export const APP_ROUTES: Routes  = [
     { path: "progress-bars", loadChildren: "app/progress-bars/progress-bars.demo.module" },
     { path: "radios", loadChildren: "app/radios/radios.demo.module" },
     { path: "selects", loadChildren: "app/selects/selects.demo.module" },
+    { path: "signposts", loadChildren: "app/signpost/signpost.demo.module" },
     { path: "spinners", loadChildren: "app/spinners/spinners.demo.module" },
     { path: "stack-view", loadChildren: "app/stack-view/stack-view.demo.module" },
     { path: "tables", loadChildren: "app/tables/tables.demo.module" },
@@ -40,7 +42,8 @@ export const APP_ROUTES: Routes  = [
     { path: "toggles", loadChildren: "app/toggles/toggles.demo.module" },
     { path: "tooltips", loadChildren: "app/tooltips/tooltips.demo.module" },
     { path: "typography", loadChildren: "app/typography/typography.demo.module" },
-    { path: "wizard", loadChildren: "app/wizard/wizard.demo.module" }
+    { path: "wizard", loadChildren: "app/wizard/wizard.demo.module" },
+    { path: "wizard-deprecated", loadChildren: "app/wizard-deprecated/wizard.demo.module" },
 ];
 
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);

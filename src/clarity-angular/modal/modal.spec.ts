@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 VMware, Inc. All Rights Reserved.
+ * Copyright (c) 2016-2017 VMware, Inc. All Rights Reserved.
  * This software is released under MIT license.
  * The full license information can be found in LICENSE in the root directory of this project.
  */
@@ -10,9 +10,10 @@ import {
     fakeAsync,
     tick
 } from "@angular/core/testing";
-import {Component, ViewChild} from "@angular/core";
-import {ClarityModule} from "../clarity.module";
-import {Modal} from "./modal";
+import { Component, ViewChild } from "@angular/core";
+import { Modal } from "./modal";
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
+import { ClrModalModule } from "./modal.module";
 
 @Component({
     template: `
@@ -45,7 +46,10 @@ describe("Modal", () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [ClarityModule.forRoot()],
+            imports: [
+                ClrModalModule,
+                NoopAnimationsModule
+            ],
             declarations: [TestComponent]
         });
 
@@ -109,6 +113,13 @@ describe("Modal", () => {
     it("offers two-way binding on clrModalOpen", fakeAsync(() => {
         expect(fixture.componentInstance.opened).toBe(true);
         getModalInstance(fixture).close();
+        fixture.detectChanges();
+
+        // We make sure to wait for the animation to be over before emitting the output
+
+        // todo: uncomment this after animation bug is fixed https://github.com/angular/angular/issues/15798
+        // expect(fixture.componentInstance.opened).toBe(true);
+        tick();
         expect(fixture.componentInstance.opened).toBe(false);
     }));
 

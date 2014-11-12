@@ -5,7 +5,7 @@
  */
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {ClarityModule} from "../../clarity-angular";
+import {ClarityModule} from "../../clarity-angular/clarity.module";
 import {ROUTING} from "./buttons.demo.routing";
 import {ButtonsDemo} from "./buttons.demo";
 import {RealButtonDemo} from "./real-button";
@@ -14,6 +14,7 @@ import {SecondaryButtonDemo} from "./secondary-button";
 import {TertiaryButtonDemo} from "./tertiary-button";
 import {InverseButtonDemo} from "./inverse-button";
 import {ButtonStatesDemo} from "./button-states";
+import {ButtonLoadingDemo} from "./button-loading";
 import {ButtonSizesDemo} from "./button-sizes";
 import {ToggleDemo} from "./toggles";
 import {ButtonsTestDemo} from "./buttons-test";
@@ -33,6 +34,7 @@ import {ButtonsIconsDemo} from "./buttons-icons";
         TertiaryButtonDemo,
         InverseButtonDemo,
         ButtonStatesDemo,
+        ButtonLoadingDemo,
         ButtonSizesDemo,
         ToggleDemo,
         ButtonsTestDemo,
@@ -46,6 +48,7 @@ import {ButtonsIconsDemo} from "./buttons-icons";
         TertiaryButtonDemo,
         InverseButtonDemo,
         ButtonStatesDemo,
+        ButtonLoadingDemo,
         ButtonSizesDemo,
         ToggleDemo,
         ButtonsTestDemo,

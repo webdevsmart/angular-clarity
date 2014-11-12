@@ -25,6 +25,18 @@ $clr-icon-color-highlight: #007CBB;
     }
 }
 
+@mixin flipSVGIcon($direction) {
+    @if $direction == 'horizontal' {
+        svg {
+            transform: scale(-1) rotateX(180deg);
+        }
+    } @else if $direction == 'vertical' {
+        svg {
+            transform: scale(-1) rotateY(180deg);
+        }
+    }
+}
+
 clr-icon {
     display: inline-block;
     margin: 0;
@@ -71,19 +83,20 @@ clr-icon {
     &[dir="left"] {
         @include rotateSVGIcon(270deg);
     }
+    &[flip="horizontal"] {
+        @include flipSVGIcon('horizontal');
+    }
+    &[flip="vertical"] {
+        @include flipSVGIcon('vertical');
+    }
     .clr-i-badge {
-        @include setIconColor($clr-icon-color-warning);
+        @include setIconColor($clr-icon-color-danger);
     }
     &>svg {
         height: 100%;
         width: 100%;
         display: block;
-    }
-    .transparent-fill-stroke {
-        fill: none;
-        stroke-width: 1.3;
-        stroke-linejoin: round;
-        stroke-miterlimit: 10;
+        transition: inherit;
     }
     .clr-i-solid,
     .clr-i-solid--badged,

@@ -14,10 +14,7 @@ declare interface Module {
     id: string;
 }
 
-declare var customElements: CustomElements;
-
-declare interface CustomElements {
-    define: any;
+interface Window { 
+    ClarityIcons: any;
+    DOMPurify: any;
 }
-
-interface Window { ClarityIcons: any; }

@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2016 VMware, Inc. All Rights Reserved.
+  ~ Copyright (c) 2016-2017 VMware, Inc. All Rights Reserved.
   ~ This software is released under MIT license.
   ~ The full license information can be found in LICENSE in the root directory of this project.
   -->
@@ -10,8 +10,9 @@
     For an easy setup of datagrid column features, you can simply specify the property to bind it to
     in your model. When you do, the column will benefit for all built-in features for this case:
     sorting based on the natural comparison, filtering based on string value, and anything else we
-    might add in the future. You can bind to as deep a property as you want in your model, using
-    a standard dot-separated syntax:
+    might add in the future. Please note that the default sort order for strings will be case-insensitive.
+    If this isn't the desired behavior, you will have to write a custom comparator. You can bind to as deep 
+    a property as you want in your model, using a standard dot-separated syntax:
     <code class="clr-code">[clrDgField]=&quot;'my.deep.property'&quot;</code>
 </p>
 <p>
@@ -22,7 +23,7 @@
 
 <clr-datagrid>
     <clr-dg-column>User ID</clr-dg-column>
-    <clr-dg-column [clrDgField]="'name'">Name</clr-dg-column>
+    <clr-dg-column [clrDgField]="'name'" [(clrFilterValue)]="nameFilter">Name</clr-dg-column>
     <clr-dg-column [clrDgField]="'creation'">Creation date</clr-dg-column>
     <clr-dg-column [clrDgField]="'pokemon.name'">Pokemon</clr-dg-column>
     <clr-dg-column [clrDgField]="'color'">Favorite color</clr-dg-column>

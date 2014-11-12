@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 VMware, Inc. All Rights Reserved.
+ * Copyright (c) 2016-2017 VMware, Inc. All Rights Reserved.
  * This software is released under MIT license.
  * The full license information can be found in LICENSE in the root directory of this project.
  */
@@ -40,5 +40,32 @@ class MyComponent {
     Pokemon
     <clr-dg-string-filter [clrDgStringFilter]="pokemonFilter"></clr-dg-string-filter>
 </clr-dg-column>
+`,
+
+    stringPreFilterTS: `
+import ...
+
+@Component({
+    ...
+})
+export class DatagridStringFilteringDemo {
+    ...
+    myFilterValue1 = "A";
+    myFilterValue2 = "M";
+    ...
+`,
+    stringPreFilterHTML: `
+...
+    <clr-dg-column
+            [clrDgField]="'name'"
+            [(clrFilterValue)]="myFilterValue1">Name
+    </clr-dg-column>
+    <clr-dg-column>
+        Pokemon
+        <clr-dg-string-filter
+                [clrDgStringFilter]="pokemonFilter"
+                [(clrFilterValue)]="myFilterValue2"></clr-dg-string-filter>
+    </clr-dg-column>
+...
 `
 };

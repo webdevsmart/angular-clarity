@@ -5,6 +5,36 @@
  */
 import {Component} from "@angular/core";
 
+const EXAMPLE_HTML = `
+<clr-tree-node class="example-beatles-tree">
+    The Beatles
+    <ng-template [clrIfExpanded]="true">
+        <clr-tree-node>
+            <a
+                [routerLink]="['./album1']"
+                class="clr-treenode-link"
+                routerLinkActive="active">Abbey Road</a>
+        </clr-tree-node>
+
+        <clr-tree-node>
+            <a
+                [routerLink]="['./album2']"
+                class="clr-treenode-link"
+                routerLinkActive="active">Revolver</a>
+        </clr-tree-node>
+
+        <clr-tree-node>
+            <a
+                [routerLink]="['./album3']"
+                class="clr-treenode-link"
+                routerLinkActive="active">Rubber Soul</a>
+        </clr-tree-node>
+    </ng-template>
+</clr-tree-node>
+<router-outlet></router-outlet>
+`;
+
+
 @Component({
     moduleId: module.id,
     selector: "clr-tree-node-routing-demo",
@@ -13,5 +43,5 @@ import {Component} from "@angular/core";
     templateUrl: "tree-node-routing.html"
 })
 export class TreeNodeRoutingDemo {
-
+    exampleHTML = EXAMPLE_HTML;
 }

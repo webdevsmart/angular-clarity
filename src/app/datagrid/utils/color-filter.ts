@@ -1,13 +1,13 @@
 /*
- * Copyright (c) 2016 VMware, Inc. All Rights Reserved.
+ * Copyright (c) 2016-2017 VMware, Inc. All Rights Reserved.
  * This software is released under MIT license.
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 import {Component, EventEmitter} from "@angular/core";
-
-import {Filter} from "../../../clarity-angular/datagrid";
+import {Filter} from "../../../clarity-angular/data/datagrid";
 import {User} from "../inventory/user";
 import {COLORS} from "../inventory/values";
+
 
 @Component({
     moduleId: module.id,

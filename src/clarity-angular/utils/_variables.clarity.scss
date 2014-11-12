@@ -2,9 +2,11 @@
 // This software is released under MIT license.
 // The full license information can be found in LICENSE in the root directory of this project.
 
-@import "node_modules/bootstrap/scss/variables";
-@import "./helpers.clarity";
-@import "../color/color.clarity";
+$clr-baseline: 24px !default;
+
+@function baselineRem($remSize) {
+  @return $remSize * $clr-baseline;
+}
 
 //BaselineRem Variables
 $clr_baselineRem_0_1: baselineRem(0.1);
@@ -14,6 +16,7 @@ $clr_baselineRem_0_25: baselineRem(0.25);
 $clr_baselineRem_0_3: baselineRem(0.3);
 $clr_baselineRem_0_375: baselineRem(0.375);
 $clr_baselineRem_0_5: baselineRem(0.5);
+$clr_baselineRem_0_72: baselineRem(0.72);
 $clr_baselineRem_0_75: baselineRem(0.75);
 $clr_baselineRem_1: baselineRem(1);
 $clr_baselineRem_1_25: baselineRem(1.25);
@@ -47,6 +50,15 @@ $clr-kerning-lotsatext: normal !default; // 14px, but a lot of it
 $clr-kerning-smalltext: normal !default; // 14px-12px
 $clr-kerning-bigtext: 0.01em !default; // some types of 16px over dark background
 $clr-kerning-tinytext: 0.03em !default; // 11px and lower
+
+
+//Because the "rem" unit does not work on pseudo-elements in IE,
+//we use a function to compute "rem" to "px" with Sass.
+@function rem($remSize) {
+  @return $remSize * $clr-font-base-size * 1px;
+};
+
+
 
 $clr-font-weights: (
     light: 200,
@@ -335,6 +347,7 @@ $clr-typography-dom-to-type-element: (
     card_text: p1,
     card_title: h4,
     datagrid_placeholder: h5,
+    datagrid_column_toggle_title: h5,
     dropdown_text: p1,
     dropdown_header: p4,
     form_block_label: h5,
@@ -455,6 +468,7 @@ $clr-button-horizontal-margin: $clr_baselineRem_0_5 !default;
 
 //11. Icons
 $clr-icon-dimension-sm: rem(16/$clr-rem-denominator) !default;
+$clr-alert-icon-dimension-sm: rem(18/$clr-rem-denominator) !default;
 
 //12. Dropdowns Caret Icon
 $clr-dropdown-caret-icon-dimension: 10px;
@@ -462,4 +476,11 @@ $clr-dropdown-caret-left-margin: 2px;
 
 //BS4 overrides
 $enable-flex: true;
-$grid-gutter-width: $clr_baselineRem_1;
+$grid-gutter-width-base: $clr_baselineRem_1;
+$grid-gutter-widths: (
+  xs: $grid-gutter-width-base,
+  sm: $grid-gutter-width-base,
+  md: $grid-gutter-width-base,
+  lg: $grid-gutter-width-base,
+  xl: $grid-gutter-width-base
+);

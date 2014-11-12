@@ -25,17 +25,70 @@ let technologyShapes = Object.keys(TechnologyShapes);
 })
 export class IconSelectionDemo {
 
-    hideShapesFromCore: string[] = [ "vm-bug" ];
+    commonPath = "clarity-icons/shapes/svg-source/";
+    coreSetLink = this.commonPath + "core-shapes.zip";
+    essentialSetLink = this.commonPath + "essential-shapes.zip";
+    socialSetLink = this.commonPath + "social-shapes.zip";
+    technologySetLink = this.commonPath + "technology-shapes.zip";
+    allSetsLink = this.commonPath + "all-shapes.zip";
+
+
+    previewClasses: any = {
+        "is-solid": false,
+        "has-alert": false,
+        "has-badge": false
+    };
+
+
+    onChangeSolid(event: any): void {
+
+        this.previewClasses[ "is-solid" ] = event.target.checked;
+    }
+
+    onChangeStatus(event: any): void {
+
+        let radioId = event.target.getAttribute("id");
+
+        if (radioId === "alertRadio") {
+
+            this.previewClasses[ "has-badge" ] = false;
+            this.previewClasses[ "has-alert" ] = true;
+
+        } else if ((radioId === "badgeRadio")) {
+
+            this.previewClasses[ "has-alert" ] = false;
+            this.previewClasses[ "has-badge" ] = true;
+
+        } else {
+
+            this.previewClasses[ "has-alert" ] = false;
+            this.previewClasses[ "has-badge" ] = false;
+
+        }
+    }
+
+
+    hideShapesFromCore: string[] = [ "vm-bug", "ellipses-horizontal", "ellipses-vertical" ];
 
     coreShapes: string[] = coreShapes.filter((shape) => {
         return this.hideShapesFromCore.indexOf(shape) === -1;
     });
 
-    essentialShapes: string[] = essentialShapes;
+    hideShapesFromEssential: string[] = [ "ellipses-horizontal", "ellipses-vertical", "network" ];
+
+    essentialShapes: string[] = essentialShapes.filter((shape) => {
+        return this.hideShapesFromEssential.indexOf(shape) === -1;
+    });
 
     socialShapes: string[] = socialShapes;
 
-    technologyShapes: string[] = technologyShapes;
+    hideShapesFromTechnology: string[] = [ "app"];
+
+    technologyShapes: string[] = technologyShapes.filter((shape) => {
+        return this.hideShapesFromTechnology.indexOf(shape) === -1;
+    });
+
+
 
 
 }

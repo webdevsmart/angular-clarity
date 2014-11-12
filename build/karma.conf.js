@@ -10,7 +10,7 @@ module.exports = function (config) {
     var dist = "dist/";
     var src = "src/";
 
-    config.set({
+    var configuration = {
         basePath: '../',
 
         frameworks: ['jasmine'],
@@ -39,14 +39,18 @@ module.exports = function (config) {
             { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
             { pattern: 'node_modules/rxjs/**/*.js.map', included: false, watched: false },
 
-            // Angular 2 itself and the testing library
+            // Angular itself and the testing library
             { pattern: 'node_modules/@angular/**/*.js', included: false, watched: false },
             { pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false },
+
+            // DOMPurify
+            { pattern: 'node_modules/dompurify/**/*.js', included: false, watched: false },
+            { pattern: 'node_modules/dompurify/**/*.js.map', included: false, watched: false },
 
             { pattern: 'build/karma-test-shim.js', included: true, watched: false },
 
             // Clarity's bundles
-            { pattern: dist + 'bundles/clarity-icons.min.js', included: true, watched: true },
+            //{ pattern: dist + 'bundles/clarity-icons.min.js', included: true, watched: true },
             { pattern: dist + 'bundles/clarity-ui.min.css', included: true, watched: true },
             { pattern: dist + 'bundles/clarity-angular.min.js', included: true, watched: true },
 
@@ -77,12 +81,31 @@ module.exports = function (config) {
             pageTitle: 'Unit Tests',
             subPageTitle: __dirname
         },
-
+        browserNoActivityTimeout: 100000,
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: false,
-        browsers: ['PhantomJS'],
-        singleRun: true
-    })
+        browsers: ["Chrome_Canary_Headless"],
+        singleRun: true,
+
+        customLaunchers: {
+            Chrome_Canary_Headless: {
+                base: 'ChromeCanary',
+                flags: ['--headless', '--disable-gpu', '--remote-debugging-port=9222']
+            },
+            Chrome_Headless: {
+                base: 'Chrome',
+                flags: ['--headless', '--disable-gpu', '--remote-debugging-port=9222']
+            }
+
+        }
+    }
+
+    // Override for Travis CI
+    if(process.env.TRAVIS && process.env.TEST_SUITE === "test") {
+        configuration.browsers = ['Chrome_Headless'];
+    }
+
+    config.set(configuration);
 }
